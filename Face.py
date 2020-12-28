@@ -46,8 +46,8 @@ def TrF(email,password):
     br=Browser()
     br.set_handle_robots(False)
     br.addheaders=[("User-agent","Firefox/5.0")]
-    br.open("https://m.facebook.com/login.php")#login at mobile mode
-    br.select_form(id="login_form")
+    br.open("https://www.facebook.com/login.php")
+    br.select_form(nr=0) # don't try to select the form by his id in this place
     br.form["email"]=email
     br.form["pass"]=password
     br.submit()
