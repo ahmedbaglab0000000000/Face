@@ -56,7 +56,7 @@ def TrF(email,password):
         if br.form["recover_method"] == ['send_email'] :
                 return False;
         br.select_form(id="login_form")
-    except mechanize._mechanize.FormNotFoundError:
+    except mechanize._mechanize.FormNotFoundError or mechanize._form_controls.ControlNotFoundError: 
         return True
 
 Email=pro_input("     ( Email ) : ")
