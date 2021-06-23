@@ -45,8 +45,8 @@ def pro_input(label):
 def TrF(email,password):
     br=Browser()
     br.set_handle_robots(False);
-    br.addheaders=[("User-agent","Mozila 5.7")];
-    br.open("https://www.facebook.com/login.php");
+    br.addheaders=[("User-agent","Chrome/5.0")];
+    br.open("https://m.facebook.com/login.php");
     br.select_form(id='login_form') # don't try to select the form by his id in this place
     br.form["email"]=email;
     br.form["pass"]=password;
