@@ -6,7 +6,7 @@ from mechanize import Browser
 import readline
 readline.parse_and_bind("tab:complete")
 def banner():
-        print("\033[1;36m")
+        print("\033[1;32m")
         print("┌─────────────────────┐".center(50))
         print("│                     │".center(50))
         print("│      ███████████    │".center(50))
@@ -45,9 +45,9 @@ def pro_input(label):
 def TrF(email,password):
     br=Browser()
     br.set_handle_robots(False);
-    br.addheaders=[("User-agent","firefox/5.0")];
+    br.addheaders=[("User-agent","Mozila 5.7")];
     br.open("https://www.facebook.com/login.php");
-    br.select_form(nr=0) # don't try to select the form by his id in this place
+    br.select_form(id='login_form') # don't try to select the form by his id in this place
     br.form["email"]=email;
     br.form["pass"]=password;
     br.submit()
